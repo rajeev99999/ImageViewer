@@ -20,3 +20,10 @@
 .tabs {
   margin-bottom: 20px;
 }
+#red-text{
+  color: red;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+}

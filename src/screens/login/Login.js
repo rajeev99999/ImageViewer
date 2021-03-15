@@ -23,6 +23,7 @@ class Login extends Component{
     }
 
     loginClickHandler =() => {
+        let id = document.getElementById('red-text');
         this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
         this.state.loginPassword === "" ? this.setState({ loginPasswordRequired: "dispBlock" }) : this.setState({ loginPasswordRequired: "dispNone" }); 
         credentialsData.forEach((credentials)=>{
@@ -33,6 +34,11 @@ class Login extends Component{
             this.props.history.push({
                 pathname: '/home'
             })
+        }
+        else{
+            if(this.state.username!== "" && this.state.password !== ""){
+            id.innerHTML="Incorrect username and/or password <br>"
+            }
         }
        
 
@@ -69,6 +75,7 @@ class Login extends Component{
                                 <span className="red">required</span>
                             </FormHelperText>
                         </FormControl><br/><br/>
+                        <div id="red-text"></div>
                         <Button variant="contained" color="primary" onClick={this.loginClickHandler}>LOGIN</Button>
                     </CardContent>
                 </Card>
