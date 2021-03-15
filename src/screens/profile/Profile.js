@@ -16,6 +16,10 @@ import Input from '@material-ui/core/Input'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import { Button } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import EditRoundedIcon from '@material-ui/icons/EditRounded';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Typography from "@material-ui/core/Typography";
 
 const customStyles = {
     content: {
@@ -25,6 +29,18 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         width:'60%',
+        transform: 'translate(-50%, -50%)'
+    }
+};
+
+const customStylesForDesc = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        width:'12%',
         transform: 'translate(-50%, -50%)'
     }
 };
@@ -66,6 +82,9 @@ class Profile extends Component{
         super();
             this.state={
                 modalIsOpen:false,
+                description:'',
+                fullName:'',
+                editModalIsOpen :false,
                 value: 0,
                 mediaUrl:'',
                 postData:[],
@@ -133,6 +152,30 @@ class Profile extends Component{
     closeModalHandler =() =>{
         this.setState({ modalIsOpen: false });
     }
+
+    closeEditModalHandler =() =>{
+        this.setState({ editModalIsOpen: false });
+    }
+
+    descriptionHandler = () => {
+        this.setState({
+            editModalIsOpen:true
+        })
+
+    }
+
+    inputChangeHandler = (event) =>{
+        this.setState({
+            description: event.target.value
+        })
+    }
+    updateNameHandler =(event) =>{
+        this.setState({
+            fullName:this.state.description,
+            editModalIsOpen:false
+        })
+    }
+
     render(){
         const { classes } = this.props;
         return(
@@ -155,7 +198,8 @@ class Profile extends Component{
                             </ul>
                         </div>
                         <div className="profile-bio">
-                            <span className="profile-desc">Real me Rajeev</span>
+                            <span id ="full-name" className="profile-desc">{this.state.fullName ===""?"Upgrad Education":this.state.fullName} &nbsp;</span>
+                            <Button variant="contained" color="secondary" onClick={this.descriptionHandler}><EditRoundedIcon/></Button>
                         </div>
                     </div>
                 </div>
@@ -210,8 +254,23 @@ class Profile extends Component{
                 </div>
                    </Modal>
                 </GridList>
-               
-
+               <Modal
+                    ariaHideApp={false}
+                    isOpen={this.state.editModalIsOpen}
+                    contentLabel="DescModal"
+                    onRequestClose={this.closeEditModalHandler}
+                    style={customStylesForDesc}
+                    >
+                        <Typography component="h1">
+                            <p style={{fontSize:20}}>EDIT</p>
+                        </Typography>
+                             <FormControl required>
+                                <InputLabel htmlFor="edit-name">Full Name</InputLabel>
+                                <Input id="edit-name" type="text" description={this.state.description} onChange={this.inputChangeHandler}/><br/><br/>
+                        <Button size="small" style={{width:'40%'}} variant="contained" color="primary" onClick={this.updateNameHandler}>UPDATE</Button>
+                                
+                            </FormControl>                       
+                    </Modal>
                 
             </div>
         )
