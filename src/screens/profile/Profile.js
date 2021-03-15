@@ -192,9 +192,9 @@ class Profile extends Component{
                         </div>
                         <div className="profile-stats">
                             <ul>
-                                <li><span className="profile-stat-count">{sessionStorage.getItem("number-posts")} </span>posts</li>
-                                <li><span className="profile-stat-count">33 </span>followers</li>
-                                <li><span className="profile-stat-count">22 </span>followed by</li>
+                                <li>Posts: <span className="profile-stat-count">{sessionStorage.getItem("number-posts")} </span></li>
+                                <li>Follows: <span className="profile-stat-count">33 </span></li>
+                                <li>Followed By: <span className="profile-stat-count">22 </span></li>
                             </ul>
                         </div>
                         <div className="profile-bio">
