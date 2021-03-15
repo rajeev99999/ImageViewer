@@ -1,0 +1,22 @@
+.cardStyle {
+  width: 280px;
+  padding: 50px 64px 32px 64px;
+  margin: auto;
+  text-align: left;
+}
+
+.red {
+  color: red;
+}
+
+.dispNone {
+  display: none;
+}
+
+.dispBlock {
+  display: block;
+}
+
+.tabs {
+  margin-bottom: 20px;
+}

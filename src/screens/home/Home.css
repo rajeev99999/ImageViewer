@@ -1,0 +1,30 @@
+.image-post {
+    height: 50%;
+    width: 50%;
+}
+.flex-container {
+    display: flex;
+}
+.card-tile{
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 0px;
+}
+
+hr{
+    width: 98%;
+    margin-top: 15px ;
+}
+
+.like-btn{
+    padding: 5px 20px 0px 5px;
+    margin: -5px;
+}
+
+.commentBox{
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 86%;
+    display: inline-block;
+    padding-right: 0px;
+}

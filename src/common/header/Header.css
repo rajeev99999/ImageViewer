@@ -1,0 +1,30 @@
+.app-header{
+    background-color: #263238;
+    height:65px;
+    padding: 8px 32px 8px 16px;
+}
+
+.app-logo-heading{
+    float: left;
+    color: #fff;
+    
+    padding: 20px;
+    font-size: 20px;
+}
+
+.search-box{
+    display: flex;
+    border-radius: 4px;
+    width: 300px;
+    float: right; 
+    background-color: #c0c0c0;
+}
+.avatar-icon{
+    margin-left: 18px;
+    margin-top: 15px;
+    float: right;
+}
+.popper{
+    text-decoration: none;
+color: black;
+}
