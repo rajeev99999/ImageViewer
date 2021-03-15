@@ -4,18 +4,6 @@ import Home from '../screens/home/Home';
 import Profile from '../screens/profile/Profile';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
-
-// let accessToken=sessionStorage.getItem("access-token");
-// let accessTokenFlag = false;
-// if(accessToken !== null){
-//     accessTokenFlag = true;
-// }
-// else{
-//     accessTokenFlag = false;
-// }
-
-// console.log(accessToken);
-// console.log(accessTokenFlag);
 class Controller extends Component{
     render(){
         return(
